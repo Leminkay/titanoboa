@@ -135,11 +135,11 @@ class ABIFunction:
 
         match self.contract.marshal_to_python(computation, self.return_type):
             case ():
-                return None
+                return computation, None
             case (single,):
-                return single
+                return computation, single
             case multiple:
-                return tuple(multiple)
+                return computation, tuple(multiple)
 
 
 class ABIOverload:

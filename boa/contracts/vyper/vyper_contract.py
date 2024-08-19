@@ -1070,7 +1070,7 @@ class VyperFunction:
             )
 
             typ = self.func_t.return_type
-            return self.contract.marshal_to_python(computation, typ)
+            return computation, self.contract.marshal_to_python(computation, typ)
 
 
 class VyperInternalFunction(VyperFunction):
